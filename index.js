@@ -152,7 +152,11 @@ let SimpleParseSmtpAdapter = (adapterOptions) => {
       to: getUserEmail(data.user),
     };
 
-    if (adapterOptions.templates && adapterOptions.templates.resetPassword) {
+    if (
+      adapterOptions.templates &&
+      adapterOptions.templates.resetPassword &&
+      adapterOptions.templates.resetPassword.template
+    ) {
       return renderTemplate(
         adapterOptions.templates.resetPassword.template,
         data
@@ -190,7 +194,7 @@ let SimpleParseSmtpAdapter = (adapterOptions) => {
       to: getUserEmail(data.user),
     };
 
-    if (adapterOptions.templates && adapterOptions.templates.verifyEmail) {
+    if (adapterOptions.templates && adapterOptions.templates.verifyEmail && && adapterOptions.templates.verifyEmail.template) {
       return renderTemplate(
         adapterOptions.templates.verifyEmail.template,
         data
