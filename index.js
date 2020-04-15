@@ -4,9 +4,8 @@ const nodemailer = require("nodemailer");
 const EmailTemplate = require("email-templates").EmailTemplate;
 
 let SimpleParseSmtpAdapter = (adapterOptions) => {
-  if (!adapterOptions && adapterOptions.service == "Gmail") {
+  if (adapterOptions && adapterOptions.service === "Gmail") {
     if (
-      !adapterOptions ||
       !adapterOptions.service ||
       !adapterOptions.type ||
       !adapterOptions.user ||
@@ -17,9 +16,8 @@ let SimpleParseSmtpAdapter = (adapterOptions) => {
     ) {
       throw "SimpleParseSMTPAdapter requires service,type, user, clientId,clientSecret,refreshToken and accessToken";
     }
-  } else if (!adapterOptions && adapterOptions.service == "SMTP") {
+  } else if (adapterOptions && adapterOptions.service === "SMTP") {
     if (
-      !adapterOptions ||
       !adapterOptions.user ||
       !adapterOptions.password ||
       !adapterOptions.host ||
