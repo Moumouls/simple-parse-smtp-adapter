@@ -194,7 +194,11 @@ let SimpleParseSmtpAdapter = (adapterOptions) => {
       to: getUserEmail(data.user),
     };
 
-    if (adapterOptions.templates && adapterOptions.templates.verifyEmail && && adapterOptions.templates.verifyEmail.template) {
+    if (
+      adapterOptions.templates &&
+      adapterOptions.templates.verifyEmail &&
+      adapterOptions.templates.verifyEmail.template
+    ) {
       return renderTemplate(
         adapterOptions.templates.verifyEmail.template,
         data
